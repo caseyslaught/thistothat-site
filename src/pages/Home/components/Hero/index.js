@@ -33,8 +33,9 @@ const Hero = () => {
       <div className="text-column">
         <div className="title">Convert stuff from one format to another</div>
         <div className="subtitle">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore.
+          ThisToThat is an API for converting things like currencies and
+          commodity codes. The service is free to use and you do whatever you
+          want with the data. Grab an API key to get started!
         </div>
         <SubmitEmail />
       </div>

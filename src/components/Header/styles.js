@@ -31,4 +31,9 @@ export const StyledHeader = styled.header`
     font-weight: bold;
     color: white;
   }
+
+  .logo {
+    height: 60%;
+    width: auto;
+  }
 `;

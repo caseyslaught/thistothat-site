@@ -1,6 +1,7 @@
 import React from "react";
 
 import { useWindowDimensions } from "../WindowDimensionsProvider";
+import Logo from "../../assets/images/logo_light.png";
 import { StyledHeaderWrapper, StyledHeader } from "./styles";
 
 const DesktopNavbar = ({ selectedTab, setSelectedTab }) => {
@@ -25,7 +26,7 @@ const Header = ({ selectedTab, setSelectedTab }) => {
   return (
     <StyledHeaderWrapper isDesktop={isDesktop} isShrunk={isShrunk}>
       <StyledHeader isDesktop={isDesktop} isShrunk={isShrunk}>
-        <div className="header-title">ThisToThat</div>
+        <img className="logo" src={Logo} alt="ThisToThat logo" />
         {isDesktop ? (
           <DesktopNavbar
             selectedTab={selectedTab}
