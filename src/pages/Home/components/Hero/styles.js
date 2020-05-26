@@ -1,5 +1,10 @@
 import styled from "styled-components";
 
+export const StyledHeroWrapper = styled.div`
+  width: 100%;
+  background: transparent;
+`;
+
 export const StyledHero = styled.div`
   max-width: 1000px;
   margin: 0 auto;

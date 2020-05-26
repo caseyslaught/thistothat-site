@@ -4,7 +4,7 @@ import { CodeBlock, monoBlue } from "react-code-blocks";
 
 import { useWindowDimensions } from "../../../../components/WindowDimensionsProvider";
 import SubmitEmail from "../SubmitEmail";
-import { StyledHero } from "./styles";
+import { StyledHeroWrapper, StyledHero } from "./styles";
 
 const code = `
 // Lookup Harmonized System code description
@@ -29,36 +29,38 @@ const Hero = () => {
   const { isDesktop } = useWindowDimensions();
 
   return (
-    <StyledHero isDesktop={isDesktop}>
-      <div className="text-column">
-        <div className="title">Convert stuff from one format to another</div>
-        <div className="subtitle">
-          ThisToThat is an API for converting things like currencies and
-          commodity codes. The service is free to use and you can do whatever
-          you want with the data. Grab an API key to get started!
+    <StyledHeroWrapper>
+      <StyledHero isDesktop={isDesktop}>
+        <div className="text-column">
+          <div className="title">Convert stuff from one format to another</div>
+          <div className="subtitle">
+            ThisToThat is an API for converting things like currencies and
+            commodity codes. The service is free to use and you can do whatever
+            you want with the data. Grab an API key to get started!
+          </div>
+          <SubmitEmail />
         </div>
-        <SubmitEmail />
-      </div>
-      <div className="example-column">
-        <CodeBlock
-          className="code-wrapper"
-          language="javascript"
-          showLineNumbers={false}
-          text={code}
-          theme={monoBlue}
-          wrapLines
-        />
+        <div className="example-column">
+          <CodeBlock
+            className="code-wrapper"
+            language="javascript"
+            showLineNumbers={false}
+            text={code}
+            theme={monoBlue}
+            wrapLines
+          />
 
-        <Button
-          href="https://thistothat.docs.apiary.io/"
-          target="_blank"
-          size={isDesktop ? "large" : ""}
-          style={{ marginTop: 10 }}
-        >
-          EXPLORE THE DOCS
-        </Button>
-      </div>
-    </StyledHero>
+          <Button
+            href="https://thistothat.docs.apiary.io/"
+            target="_blank"
+            size={isDesktop ? "large" : ""}
+            style={{ marginTop: 10 }}
+          >
+            EXPLORE THE DOCS
+          </Button>
+        </div>
+      </StyledHero>
+    </StyledHeroWrapper>
   );
 };
 
