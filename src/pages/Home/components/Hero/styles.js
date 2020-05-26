@@ -2,12 +2,12 @@ import styled from "styled-components";
 
 export const StyledHero = styled.div`
   max-width: 1000px;
-  margin: 20px auto 20px auto;
+  margin: 0 auto;
 
   display: flex;
   flex-direction: ${(props) => (props.isDesktop ? "row" : "column")};
   justify-content: ${(props) => (props.isDesktop ? "space-evenly" : "center")};
-  padding: ${(props) => (props.isDesktop ? "10px" : "10px")};
+  padding: ${(props) => (props.isDesktop ? "80px 10px" : "20px 10px")};
 
   .title {
     font-size: ${(props) => (props.isDesktop ? "1.8em" : "1.4em")};

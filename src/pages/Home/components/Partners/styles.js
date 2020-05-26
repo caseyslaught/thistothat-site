@@ -7,22 +7,33 @@ export const StyledPartnersWrapper = styled.div`
 `;
 
 export const StyledPartners = styled.div`
-  max-width: 1000px;
+  max-width: 800px;
   margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
-  flex-direction: row;
-  justify-content: space-evenly;
+  flex-direction: column;
   align-items: center;
 
-  .partner {
-    flex: 1;
-    padding: 5px;
-    text-align: center;
+  .trust-wrapper {
+    margin-bottom: 10px;
+    color: #fafafa;
+  }
+
+  .partners-wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: "row";
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+
+  .partners-wrapper .partner {
+    margin: 10px;
   }
 
   .partner img {
-    height: 30px;
+    height: 35px;
     width: auto;
   }
 `;
