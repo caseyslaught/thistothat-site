@@ -1,10 +1,13 @@
 import styled from "styled-components";
 
 export const StyledHero = styled.div`
+  max-width: 1000px;
+  margin: 20px auto 20px auto;
+
   display: flex;
   flex-direction: ${(props) => (props.isDesktop ? "row" : "column")};
   justify-content: ${(props) => (props.isDesktop ? "space-evenly" : "center")};
-  padding-top: ${(props) => (props.isDesktop ? "40px" : "0px")};
+  padding: ${(props) => (props.isDesktop ? "10px" : "10px")};
 
   .title {
     font-size: ${(props) => (props.isDesktop ? "1.8em" : "1.4em")};
@@ -28,7 +31,7 @@ export const StyledHero = styled.div`
     flex: 1;
     display: flex;
     flex-direction: column;
-    padding: ${(props) => (props.isDesktop ? "20px" : "0px")};
+    padding-right: ${(props) => (props.isDesktop ? "30px" : "0px")};
     margin-bottom: ${(props) => (props.isDesktop ? "10px" : "20px")};
   }
 
@@ -36,15 +39,7 @@ export const StyledHero = styled.div`
     flex: 1;
     display: flex;
     flex-direction: column;
-    padding: ${(props) => (props.isDesktop ? "20px" : "0px")};
+    padding-left: ${(props) => (props.isDesktop ? "30px" : "0px")};
     margin-bottom: ${(props) => (props.isDesktop ? "10px" : "20px")};
-  }
-
-  .example-column .code-wrapper {
-    height: 300px;
-    width: 100%;
-    background: white;
-    border-radius: 5px;
-    margin-bottom: 10px;
   }
 `;
