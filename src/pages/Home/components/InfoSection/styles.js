@@ -15,6 +15,7 @@ export const StyledInfoSection = styled.div`
   justify-content: space-evenly;
 
   .info-card {
+    width: ${(props) => (props.isDesktop ? "100%" : "")};
     background: #708a9e;
     margin: 10px;
     border-radius: 3px;

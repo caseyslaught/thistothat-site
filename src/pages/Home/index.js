@@ -1,5 +1,7 @@
 import React from "react";
 
+import DataSources from "./components/DataSources";
+import Explore from "./components/ExploreSection";
 import Hero from "./components/Hero";
 import InfoSection from "./components/InfoSection";
 import Partners from "./components/Partners";
@@ -12,6 +14,8 @@ const Home = () => {
       <Hero />
       <Partners />
       <InfoSection />
+      <Explore />
+      <DataSources />
     </StyledHome>
   );
 };
