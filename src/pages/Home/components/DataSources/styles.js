@@ -53,6 +53,23 @@ export const StyledDataSources = styled.div`
   }
 
   .sources-list {
+    max-height: 300px;
+    overflow: auto;
+    padding-right: 20px;
+  }
+
+  .sources-list::-webkit-scrollbar {
+    width: 5px;
+  }
+
+  .sources-list::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 3px #576c82;
+    border-radius: 10px;
+  }
+
+  .sources-list::-webkit-scrollbar-thumb {
+    background: #576c82;
+    border-radius: 10px;
   }
 
   .source-row {
