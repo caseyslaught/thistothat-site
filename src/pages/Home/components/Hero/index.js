@@ -2,28 +2,10 @@ import React from "react";
 import { Button } from "antd";
 import { CodeBlock, monoBlue } from "react-code-blocks";
 
+import { title, subtitle, code } from "../../../../assets/text/heroSection";
 import { useWindowDimensions } from "../../../../components/WindowDimensionsProvider";
 import SubmitEmail from "../SubmitEmail";
 import { StyledHeroWrapper, StyledHero } from "./styles";
-
-const code = `
-// Lookup Harmonized System code description
-
-const baseUrl = "https://data.thistothat.io"
-const queryParams = "?api_key="+API_KEY
-
-fetch(baseUrl + "/commodities/hs/01" + query)
-  .then(res => res.json())
-  .then(data => console.log(data))
-
-/*
-  {
-    "code": "01",
-    "description": "Animals; live",
-    "level": "chapter"
-  }
-*/
-`;
 
 const Hero = () => {
   const { isDesktop } = useWindowDimensions();
@@ -32,12 +14,8 @@ const Hero = () => {
     <StyledHeroWrapper>
       <StyledHero isDesktop={isDesktop}>
         <div className="text-column">
-          <div className="title">Convert stuff from one format to another</div>
-          <div className="subtitle">
-            ThisToThat is an API for converting things like currencies and
-            commodity codes. The service is free to use and you can do whatever
-            you want with the data. Grab an API key to get started!
-          </div>
+          <div className="title">{title}</div>
+          <div className="subtitle">{subtitle}</div>
           <SubmitEmail />
         </div>
         <div className="example-column">
@@ -49,7 +27,6 @@ const Hero = () => {
             theme={monoBlue}
             wrapLines
           />
-
           <Button
             href="https://thistothat.docs.apiary.io/"
             target="_blank"

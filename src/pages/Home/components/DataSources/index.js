@@ -9,7 +9,7 @@ import { StyledDataSourcesWrapper, StyledDataSources } from "./styles";
 const DataSources = () => {
   const { isDesktop } = useWindowDimensions();
   const [sources, setSources] = React.useState([]);
-  const [source, setSource] = React.useState({});
+  const [selectedSource, setSelectedSource] = React.useState({});
 
   React.useEffect(() => {
     const Client = Prismic.client("https://thistothat.cdn.prismic.io/api/v2");
@@ -19,7 +19,6 @@ const DataSources = () => {
         Prismic.Predicates.at("document.type", "data_sources", {})
       );
       if (response) {
-        console.log(response.results);
         const sources = response.results.map((src) => ({
           id: src.id,
           title: src.data.title[0].text,
@@ -33,7 +32,7 @@ const DataSources = () => {
         sources.sort((e1, e2) => (e1.title < e2.title ? -1 : 1));
 
         setSources(sources);
-        setSource(sources[0]);
+        setSelectedSource(sources[0]);
       }
     };
 
@@ -52,7 +51,7 @@ const DataSources = () => {
                   key={id}
                   className="source-row"
                   onClick={() => {
-                    setSource(sources.find((s) => s.id === id));
+                    setSelectedSource(sources.find((s) => s.id === id));
                   }}
                 >
                   {title}
@@ -63,23 +62,23 @@ const DataSources = () => {
         </div>
 
         <div className="card">
-          {source.iconSrc && (
+          {selectedSource.iconSrc && (
             <img
-              src={source.iconSrc}
+              src={selectedSource.iconSrc}
               width={50}
               height={50}
-              alt={`${source.title}`}
+              alt={`${selectedSource.title}`}
             />
           )}
           <div>
-            <div className="title">{source.title}</div>
-            <div className="description">{source.description}</div>
+            <div className="title">{selectedSource.title}</div>
+            <div className="description">{selectedSource.description}</div>
           </div>
           <div>
             <div>
-              {source.linkDocs && (
+              {selectedSource.linkDocs && (
                 <a
-                  href={source.linkLearn}
+                  href={selectedSource.linkLearn}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -88,9 +87,9 @@ const DataSources = () => {
               )}
             </div>
             <div>
-              {source.linkLearn && (
+              {selectedSource.linkLearn && (
                 <a
-                  href={source.linkLearn}
+                  href={selectedSource.linkLearn}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -99,7 +98,7 @@ const DataSources = () => {
               )}
             </div>
           </div>
-          {source.tag === "coming soon" && (
+          {selectedSource.tag === "coming soon" && (
             <Tag
               className="status"
               icon={<ClockCircleOutlined />}
